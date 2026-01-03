@@ -21,17 +21,17 @@ module register_file #(
     input  logic [XLEN-1:0]             rd_data
 );
 
-    logic [XLEN-1:0] regs [0:NUM_REGS-1];                                                // register file array of 64 width and 32 depth
+    logic [XLEN-1:0] register_file [0:NUM_REGS-1];                                       // register file array of 64 width and 32 depth
 
     always_comb begin                                                                    // combinational read access 
-        rs1_data = (rs1_addr == 0) ? '0 : regs[rs1_addr];
-        rs2_data = (rs2_addr == 0) ? '0 : regs[rs2_addr];
+        rs1_data = (rs1_addr == 0) ? '0 : register_file[rs1_addr];
+        rs2_data = (rs2_addr == 0) ? '0 : register_file[rs2_addr];
     end
 
-    always_ff @(posedge clk) begin                                                      // sequenrial write access
+    always_ff @(posedge clk) begin                                                      // sequential write access
         if (write_en && (rd_addr != 0)) begin
-            regs[rd_addr] <= rd_data;
+            register_file[rd_addr] <= rd_data;
         end
     end
-
+    assign register_file[0] = '0;                                                       // X0 register is hard wired to 0 for RISC-V
 endmodule
