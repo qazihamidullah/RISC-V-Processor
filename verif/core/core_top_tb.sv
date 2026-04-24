@@ -5,3 +5,12 @@
 // Module:  core_top_tb.sv      
 // Description: This is the top module of the testbench of core_top.
 //###############################################################
+
+
+module core_top_tb #(
+    parameters
+) (
+    ports
+);
+    
+endmodule

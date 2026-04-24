@@ -1,0 +1,7 @@
+iss : iss.csv
+core : core.csv
+Mismatch[1]:
+[2107] iss : pc[800009d4] sltiu   a3, a3, -1212: a3:00000001 
+4335 instructions left in trace iss
+[FAILED]: 1502 matched, 1 mismatch
+

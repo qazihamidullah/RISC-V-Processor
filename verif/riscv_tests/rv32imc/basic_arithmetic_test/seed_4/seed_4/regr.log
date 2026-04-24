@@ -1,0 +1,19 @@
+iss : iss.csv
+core : core.csv
+Mismatch[1]:
+iss[2] : pc[8000000a] auipc   s2, 0x0: s2:8000000a 
+core[2] : pc[8000000a] auipc	x11,0x0: a1:8000000a 
+Mismatch[2]:
+iss[3] : pc[8000000e] addi    s2, s2, 12: s2:80000016 
+core[3] : pc[8000000e] addi	x11,x11,12: a1:80000016 
+Mismatch[3]:
+iss[6] : pc[80000022] auipc   sp, 0x14: sp:80014022 
+core[6] : pc[80000022] auipc	x10,0x27: a0:80027022 
+Mismatch[4]:
+iss[7] : pc[80000026] addi    sp, sp, -830: sp:80013ce4 
+core[7] : pc[80000026] addi	x10,x10,-830: a0:80026ce4 
+Mismatch[5]:
+iss[8] : pc[8000002a] auipc   s6, 0xa: s6:8000a02a 
+core[8] : pc[8000002a] auipc	x22,0xc: s6:8000c02a 
+[FAILED]: 10 matched, 1474 mismatch
+

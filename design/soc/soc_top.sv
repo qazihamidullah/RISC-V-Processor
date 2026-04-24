@@ -5,3 +5,7 @@
 // Module:  soc_top.sv      
 // Description: This is the top module of the soc top.
 //###############################################################
+
+module soc_top ();
+    
+endmodule

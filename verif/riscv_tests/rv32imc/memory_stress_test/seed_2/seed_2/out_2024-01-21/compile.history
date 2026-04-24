@@ -1,0 +1,1 @@
+s1(21Jan2024:16:11:18):  irun -64bit -access +rwc -f /home/icdl/riscv_dv/riscv-dv/files.f +incdir+/home/icdl/riscv_dv/riscv-dv/target/rv32imc +incdir+/home/icdl/riscv_dv/riscv-dv/user_extension -q -sv -uvm -vlog_ext +.vh -I. -uvmhome CDNS-1.2 -elaborate -l /home/icdl/abdur_rehman_serv/riscv-dv-master/out_2024-01-21/compile.log 

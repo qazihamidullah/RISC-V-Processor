@@ -1,0 +1,7 @@
+iss : iss.csv
+core : core.csv
+Mismatch[1]:
+[2313] iss : pc[80003138] lbu     t1, 242(s5): t1:000000aa 
+6602 instructions left in trace iss
+[FAILED]: 1262 matched, 1 mismatch
+

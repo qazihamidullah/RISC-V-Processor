@@ -1,0 +1,131 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 d/home/hamid/Hamid/git-projects/RISC-V-Processor/verif/sim
+vdmem
+Z1 DXx6 sv_std 3 std 0 22 @5XbY]_OacJl=`ToSm<M^0
+Z2 !s110 1777004424
+!i10b 1
+!s100 9MBVW];6@MQML<KdZPfRb1
+IdK[TL@H^5[I_c4Fdk>?LV2
+S1
+R0
+w1767423983
+8../../design/peripherals/dmem.sv
+F../../design/peripherals/dmem.sv
+!i122 0
+L0 10 33
+Z3 VDg1SIo80bB@j0V0VzS_@n1
+Z4 OL;L;2025.2;82
+r1
+!s85 0
+31
+Z5 !s108 1777004424.000000
+!s107 ../../verif/core/core_top_tb.sv|../../design/soc/soc_top.sv|../../design/core/core_top.sv|../../design/core/writeback/writeback_top.sv|../../design/core/memory/memory_top.sv|../../design/core/execute/execute_top.sv|../../design/core/decode/decode_top.sv|../../design/core/decode/register_file.sv|../../design/core/decode/immediate_extender.sv|../../design/core/decode/decoder.sv|../../design/core/fetch/fetch_top.sv|../../design/core/fetch/program_counter.sv|../../design/core/packages/instr_decode_pkg.sv|../../design/core/packages/immediate_extender_pkg.sv|../../design/peripherals/imem.sv|../../design/peripherals/dmem.sv|
+Z6 !s90 -sv|-work|work|-f|filelist.f|
+!i113 0
+Z7 o-sv -work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+Z8 tCvgOpt 0
+vimem
+R1
+R2
+!i10b 1
+!s100 VV`4AC`oMh7Szd2fJiDzM1
+I66niXnALMGS=eGCOXz@C60
+S1
+R0
+w1767423334
+8../../design/peripherals/imem.sv
+F../../design/peripherals/imem.sv
+!i122 0
+L0 12 21
+R3
+R4
+r1
+!s85 0
+31
+R5
+Z9 !s107 ../../verif/core/core_top_tb.sv|../../design/soc/soc_top.sv|../../design/core/core_top.sv|../../design/core/writeback/writeback_top.sv|../../design/core/memory/memory_top.sv|../../design/core/execute/execute_top.sv|../../design/core/decode/decode_top.sv|../../design/core/decode/register_file.sv|../../design/core/decode/immediate_extender.sv|../../design/core/decode/decoder.sv|../../design/core/fetch/fetch_top.sv|../../design/core/fetch/program_counter.sv|../../design/core/packages/instr_decode_pkg.sv|../../design/core/packages/immediate_extender_pkg.sv|../../design/peripherals/imem.sv|../../design/peripherals/dmem.sv|
+R6
+!i113 0
+R7
+R8
+vimmediate_extender
+R1
+R2
+!i10b 1
+!s100 fEcVGe:z5IXdo?Z>Akm;X1
+Ij9[>bYXVIWL:km3iZE;fL0
+!s105 immediate_extender_sv_unit
+S1
+R0
+w1767436185
+8../../design/core/decode/immediate_extender.sv
+F../../design/core/decode/immediate_extender.sv
+!i122 0
+L0 13 44
+R3
+R4
+r1
+!s85 0
+31
+R5
+R9
+R6
+!i113 0
+R7
+R8
+Ximmediate_extender_pkg
+R1
+R2
+!i10b 1
+!s100 a;Y>fN@oDE^aSW7<haCUU1
+I[E@;2z[k2KSnnj]6BQWkz3
+S1
+R0
+w1767436222
+8../../design/core/packages/immediate_extender_pkg.sv
+F../../design/core/packages/immediate_extender_pkg.sv
+!i122 0
+Z10 L0 9 0
+V[E@;2z[k2KSnnj]6BQWkz3
+R4
+r1
+!s85 0
+31
+R5
+R9
+R6
+!i113 0
+R7
+R8
+Xinstr_decode_pkg
+R1
+R2
+!i10b 1
+!s100 3Ni[fJQ6=aY6<Z006gXd_0
+IBH1=fM4PPkn6gfS?oJ:>m0
+S1
+R0
+w1767434733
+8../../design/core/packages/instr_decode_pkg.sv
+F../../design/core/packages/instr_decode_pkg.sv
+!i122 0
+R10
+VBH1=fM4PPkn6gfS?oJ:>m0
+R4
+r1
+!s85 0
+31
+R5
+R9
+R6
+!i113 0
+R7
+R8

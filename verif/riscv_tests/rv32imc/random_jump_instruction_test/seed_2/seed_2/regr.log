@@ -1,0 +1,19 @@
+iss : iss.csv
+core : core.csv
+Mismatch[1]:
+iss[77] : pc[8000014e] c.sub   a2, a2: a2:00000000 
+core[77] : pc[8000014e] andi	x12,x12,4: a2:00000004 
+Mismatch[2]:
+iss[83] : pc[80000164] c.and   a4, a3: a4:ca503cc7 
+core[83] : pc[80000164] andi	x14,x14,29: a4:00000015 
+Mismatch[3]:
+iss[86] : pc[80000170] ori     s7, a4, -1459: s7:fffffecf 
+core[86] : pc[80000170] ori	x23,x14,-1459: s7:fffffa5d 
+Mismatch[4]:
+iss[91] : pc[80000188] c.or    s1, s0: s1:ffffffe7 
+core[91] : pc[80000188] andi	x9,x9,16: s1:00000000 
+Mismatch[5]:
+iss[95] : pc[8000019a] c.xor   a4, s0: a4:0000000e 
+core[95] : pc[8000019a] andi	x14,x14,8: a4:00000008 
+[FAILED]: 100 matched, 1384 mismatch
+

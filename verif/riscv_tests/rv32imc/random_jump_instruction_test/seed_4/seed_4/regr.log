@@ -1,0 +1,20 @@
+iss : iss.csv
+core : core.csv
+Mismatch[1]:
+iss[1] : pc[8000000a] auipc   s6, 0x0: s6:8000000a 
+core[1] : pc[8000000a] auipc	x15,0x0: a5:8000000a 
+Mismatch[2]:
+iss[2] : pc[8000000e] addi    s6, s6, 12: s6:80000016 
+core[2] : pc[8000000e] addi	x15,x15,12: a5:80000016 
+Mismatch[3]:
+iss[3] : pc[80000016] lui     a0, 0x40001: a0:40001000 
+core[3] : pc[80000016] lui	x16,0x40001: a6:40001000 
+Mismatch[4]:
+iss[4] : pc[8000001a] addi    a0, a0, 260: a0:40001104 
+core[4] : pc[8000001a] addi	x16,x16,260: a6:40001104 
+Mismatch[5]:
+iss[5] : pc[80000022] auipc   s7, 0x27: s7:80027022 
+core[5] : pc[80000022] auipc	x6,0x26: t1:80026022 
+5334 instructions left in trace core
+[FAILED]: 7 matched, 11758 mismatch
+

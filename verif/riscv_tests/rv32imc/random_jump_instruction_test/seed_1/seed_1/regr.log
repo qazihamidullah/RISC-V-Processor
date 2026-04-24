@@ -1,0 +1,20 @@
+iss : iss.csv
+core : core.csv
+Mismatch[1]:
+iss[66] : pc[80000138] jalr    s9, t4, 128: s9:8000013c 
+core[66] : pc[80000126] andi	x11,x11,27: a1:00000012 
+Mismatch[2]:
+iss[67] : pc[80009bd4] c.sub   s0, s0: s0:00000000 
+core[67] : pc[80000138] jalr	x25,x29,128: s9:8000013c 
+Mismatch[3]:
+iss[69] : pc[80009bd6] c.addi  t0, -12: t0:80022e58 
+core[69] : pc[80009bd5] andi	x8,x8,0: s0:00000000 
+Mismatch[4]:
+iss[70] : pc[80009bd8] mulh    s4, sp, a5: s4:ffffffff 
+core[70] : pc[80009bd7] addi	x5,x5,-12: t0:80022e58 
+Mismatch[5]:
+iss[71] : pc[80009bdc] c.li    t2, 26: t2:0000001a 
+core[71] : pc[80009bd9] mulh	x20,x2,x15: s4:ffffffff 
+3756 instructions left in trace core
+[FAILED]: 83 matched, 10743 mismatch
+
