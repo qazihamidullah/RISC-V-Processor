@@ -8,7 +8,8 @@
 
 
 module fetch_top # (
-    parameter int WIDTH = 64;
+    parameter int WIDTH = 64,
+    parameter int OUT_REG_WIDTH =128
 ) (
     input   clk,
     input   reset,
@@ -20,6 +21,7 @@ logic [WIDTH-1] pc;
 logic [WIDTH-1] next_pc;
 logic [WIDTH-1] pc_plus_four;
 logic [WIDTH-1] imem_out;
+logic [OUT_REG_WIDTH-1:0] fetch_pipeline_register_out;
 
 //  generate pc enable signal
 assign pc_enable = 1;               // TODO modify it for stall
@@ -49,12 +51,15 @@ add_four_to_input add_four_to_input_inst (
 );
 
 // Fetch Pipeline Register
-
-
-
+fetch_pipeline_register fetch_pipeline_register_inst (
+    .clk (clk),
+    .reset (reset),
+    .pc (pc),
+    .fetch_pipeline_register_out (fetch_pipeline_register_out)
+);
 
 //  output signals
 assign instruction_out_fetch_top = imem_out;
-
+assign pc_out_fetch_top = fetch_pipeline_register_out[WIDTH-1:0];
 
 endmodule
