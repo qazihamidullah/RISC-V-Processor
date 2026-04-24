@@ -8,20 +8,20 @@
 //###############################################################
 
 module register_file #(
-    parameter int XLEN = 64,
+    parameter int WIDTH = 64,
     parameter int NUM_REGS = 32
 )(
     input  logic                        clk,
     input  logic [$clog2(NUM_REGS)-1:0] rs1_address,
     input  logic [$clog2(NUM_REGS)-1:0] rs2_address,
-    output logic [XLEN-1:0]             rs1_data,
-    output logic [XLEN-1:0]             rs2_data,
-    input  logic                        write_en,                                         // write enable for register file
     input  logic [$clog2(NUM_REGS)-1:0] rd_address,
-    input  logic [XLEN-1:0]             rd_data
+    input  logic                        write_en,                                         // write enable for register file
+    input  logic [WIDTH-1:0]            rd_data,
+    output logic [WIDTH-1:0]            rs1_data,
+    output logic [WIDTH-1:0]            rs2_data
 );
 
-    logic [XLEN-1:0] register_file [0:NUM_REGS-1];                                       // register file array of 64 width and 32 depth
+    logic [WIDTH-1:0] register_file [0:NUM_REGS-1];                                       // register file array of 64 width and 32 depth
 
     always_comb begin                                                                    // combinational read access 
         rs1_data = (rs1_addr == 0) ? '0 : register_file[rs1_addr];

@@ -7,14 +7,16 @@
 //              32 bit instruction into func3, func5, func7 etc.
 //###############################################################
 
-`include "instr_decode_pkg.sv"
-
-module decoder (
-    input                       logic           [31:0]  instruction_in,
-    output instr_decode_pkg::   decoded_instr_t         decoded_instruction
+import instr_decode_pkg::*;
+module decoder # (
+    parameter int INST_WIDTH = 32,
+    parameter int WIDTH = 64
+) (
+    input   logic   [INST_WIDTH-1:0]  instruction_in,
+    output  decoded_instr_t decoded_instruction
 );
 
-    import instr_decode_pkg::*;                                                                 // importing package for use
+                                                                 // importing package for use
 
     always_comb begin
         decoded_instruction.opcode = opcode_t'(instruction_in[OPCODE_MSB:OPCODE_LSB]);          //  opcode[6:0]

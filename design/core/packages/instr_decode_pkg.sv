@@ -11,7 +11,7 @@ package instr_decode_pkg;
     // ---------------------------------
     // Global parameters
     // ---------------------------------
-    parameter int XLEN       = 64;
+    parameter int WIDTH      = 64;
     parameter int INST_WIDTH = 32;
     parameter int REG_BITS   = 5;
 

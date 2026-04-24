@@ -11,26 +11,27 @@
 import immediate_extender_pkg::*;
 
 module immediate_extender #(
-    parameter int XLEN = 64
+    parameter int WIDTH = 64,
+    parameter int INST_WIDTH = 32
 )(
-    input  logic        [31:0]      instruction_in,
-    input  imm_type_t               imm_type,
-    output logic        [XLEN-1:0]  immediate_value
+    input  logic    [INST_WIDTH-1:0]    instruction_in,
+    input  imm_type_t                   imm_type,
+    output logic    [WIDTH-1:0]         immediate_value
 );
 
     always_comb begin
         immediate_value = '0;
         case (imm_type)
             IMM_I: begin
-                immediate_value = {{(XLEN-12){instruction_in[31]}}, instruction_in[31:20]};                      // I-type immediate                
+                immediate_value = {{(WIDTH-12){instruction_in[31]}}, instruction_in[31:20]};                      // I-type immediate                
             end
             IMM_S: begin
-                immediate_value = {{(XLEN-12){instruction_in[31]}},
+                immediate_value = {{(WIDTH-12){instruction_in[31]}},
                        instruction_in[31:25],
                        instruction_in[11:7]};                                                                   // S-type immediate
             end
             IMM_B: begin
-                immediate_value = {{(XLEN-13){instruction_in[31]}},             
+                immediate_value = {{(WIDTH-13){instruction_in[31]}},             
                        instruction_in[31],
                        instruction_in[7],
                        instruction_in[30:25],
@@ -38,12 +39,12 @@ module immediate_extender #(
                        1'b0};                                                                                   // B-type immediate (branch)
             end
             IMM_U: begin
-                immediate_value = {{(XLEN-32){instruction_in[31]}},
+                immediate_value = {{(WIDTH-32){instruction_in[31]}},
                        instruction_in[31:12],
                        12'b0};                                                                                  // U-type immediate
             end
             IMM_J: begin
-                immediate_value = {{(XLEN-21){instruction_in[31]}},
+                immediate_value = {{(WIDTH-21){instruction_in[31]}},
                        instruction_in[31],
                        instruction_in[19:12],
                        instruction_in[20],
