@@ -7,8 +7,7 @@
 //###############################################################
 
 module fetch_pipeline_register #(
-    parameter int WIDTH = 64,
-    parameter int OUT_REG_WIDTH = 128
+    parameter int WIDTH = 64
 ) (
     input   clk,
     input   reset,

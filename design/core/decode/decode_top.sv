@@ -11,8 +11,7 @@ import pipeline_register_pkg::*;
 
 module decode_top #(
     parameter int WIDTH = 64,
-    parameter int INST_WIDTH = 32,
-    parameter int OUT_REG_WIDTH = 128
+    parameter int INST_WIDTH = 32
 ) (
     input   clk,
     input   reset,
@@ -59,6 +58,11 @@ module decode_top #(
         .rs2_data (rs2_data)
     );
 
+    //  control unit instance
+    control_unit control_unit_inst (
+        .inst_name_64i (decoded_instruction.inst_name_64i)
+    );
+
     //  decode pipeline register
     decode_pipeline_register decode_pipeline_register_inst (
         .clk (clk),
@@ -67,6 +71,7 @@ module decode_top #(
         .rs1_data (rs1_data),
         .rs2_data (rs2_data),
         .immediate_value (immediate_value),
+        .inst_name_64i (decoded_instruction.inst_name_64i),
         .decode_pipeline_register_out (decode_pipeline_register_out)
     );
 
@@ -75,5 +80,5 @@ module decode_top #(
     assign rs1_data_decode_out = decode_pipeline_register_out.rs1_data;
     assign rs2_data_decode_out = decode_pipeline_register_out.rs2_data;
     assign immediate_value_decode_out = decode_pipeline_register_out.immediate_value;
-
+    assign inst_name_64i = decode_pipeline_register_out.inst_name_64i;
 endmodule

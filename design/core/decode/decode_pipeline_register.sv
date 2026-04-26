@@ -6,10 +6,10 @@
 // Description: This is the top module of the decode stage.
 //###############################################################
 
+import instr_decode_pkg::*;
 import pipeline_register_pkg::*;
 module decode_pipeline_register #(
-    parameter int WIDTH = 64,
-    parameter int OUT_REG_WIDTH = 4*WIDTH
+    parameter int WIDTH = 64
 ) (
     input   clk,
     input   reset,
@@ -27,7 +27,6 @@ module decode_pipeline_register #(
     assign decode_stage_signals.rs1_data = rs1_data;
     assign decode_stage_signals.rs2_data = rs2_data;
     assign decode_stage_signals.immediate_value = immediate_value;
-
 
     //  register all signals before sending them to execute stage
     always_ff @( posedge clk or negedge reset ) begin : decode_pipeline_register_out

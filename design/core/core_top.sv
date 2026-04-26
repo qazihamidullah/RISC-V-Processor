@@ -29,6 +29,27 @@ module core_top #(
         .pc_out_fetch_top (pc_out_fetch_top)
     );
 
+    //  decode top instance
+    decode_top decode_top_inst (
+        .clk (clk),
+        .reset (reset),
+        .instruction_in (instruction_out_fetch_top),
+        .pc_in_decode_top (pc_out_fetch_top),
+        .write_back_data (),
+        .write_en (),
+        .pc_out_decode_top (),
+        .rs1_data_decode_out (),
+        .rs2_data_decode_out (),
+        .immediate_value_decode_out ()
+    );
+
+    //  execute top instance
+
+
+    //  mempory top instance
+
+
+    //  writeback top instance
 
     
 endmodule

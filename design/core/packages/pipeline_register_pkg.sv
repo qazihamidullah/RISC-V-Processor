@@ -5,7 +5,7 @@
 // Module:  pipeline_register_pkg.sv      
 // Description: This is the pipeline_register_pkg file.  
 //###############################################################
-
+import instr_decode_pkg::*;
 package pipeline_register_pkg;
 
     //  fetch stage pipeline register struct
