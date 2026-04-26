@@ -9,17 +9,18 @@
 module fetch_pipeline_register #(
     parameter int WIDTH = 64
 ) (
-    input   clk,
-    input   reset,
-    input   enable,
-    input   [WIDTH-1:0]   pc,
-    output  fetch_pipeline_register_t fetch_pipeline_register_out
+    input                               clk,
+    input                               reset,
+    input                               enable,
+    input   [WIDTH-1:0]                 pc,
+    input   [WIDTH-1:0]                 pc_plus_four,
+    output  fetch_pipeline_register_t   fetch_pipeline_register_out
 );
     fetch_pipeline_register_t fetch_pipeline_signals;
     
     //  combined all fetch stage inputs into a single structure
     assign fetch_pipeline_signals.pc = pc;
-
+    assign fetch_pipeline_signals.pc_plus_four = pc_plus_four;
 
     //  register all signals before sending them to decode stage
     always_ff @( posedge clk or negedge reset ) begin : fetch_pipeline_register_out

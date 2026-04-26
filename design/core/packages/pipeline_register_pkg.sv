@@ -10,7 +10,8 @@ package pipeline_register_pkg;
 
     //  fetch stage pipeline register struct
     typedef struct packed {
-        logic [63:0] pc;
+        logic [63:0]    pc;
+        logic [63:0]    pc_plus_four;
     } fetch_pipeline_register_t;
 
     //  decode stage pipeline register struct
@@ -19,10 +20,15 @@ package pipeline_register_pkg;
         logic [63:0] rs1_data;
         logic [63:0] rs2_data;
         logic [63:0] immediate_value;
+        logic [63:0] pc_plus_four;
     } decode_pipeline_register_t;
 
     //  execute stage pipeline register struct
-    
+        typedef struct packed {
+        logic [63:0] pc_plus_four;
+        logic [63:0] rs2_data;
+        logic [63:0] alu_out;
+    } execute_pipeline_register_t;
     
     //  memory stage pipeline register struct
 

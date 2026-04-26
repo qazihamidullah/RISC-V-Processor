@@ -1,7 +1,7 @@
 //###############################################################
 // Author:  Qazi Hamid Ullah (qazihamidullah.eecs@gmail.com)
 //          Asad Ahmed (asadahmed674@gmail.com)
-// Date:    30/12/2025
+// Date:    26/04/2026
 // Module:  decode_pipeline_register.sv      
 // Description: This is the top module of the decode stage.
 //###############################################################

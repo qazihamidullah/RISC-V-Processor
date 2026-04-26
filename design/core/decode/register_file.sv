@@ -15,7 +15,7 @@ module register_file #(
     input  logic [$clog2(NUM_REGS)-1:0] rs1_address,
     input  logic [$clog2(NUM_REGS)-1:0] rs2_address,
     input  logic [$clog2(NUM_REGS)-1:0] rd_address,
-    input  logic                        write_en,                                         // write enable for register file
+    input  logic                        regfile_write_en,                                         // write enable for register file
     input  logic [WIDTH-1:0]            rd_data,
     output logic [WIDTH-1:0]            rs1_data,
     output logic [WIDTH-1:0]            rs2_data
@@ -29,7 +29,7 @@ module register_file #(
     end
 
     always_ff @(posedge clk) begin                                                      // sequential write access
-        if (write_en && (rd_addr != 0)) begin
+        if (regfile_write_en && (rd_addr != 0)) begin
             register_file[rd_addr] <= rd_data;
         end
     end
